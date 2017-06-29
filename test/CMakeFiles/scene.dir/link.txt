@@ -1,0 +1,1 @@
+/usr/bin/clang++    -g -O0 -Wall -Wextra -pedantic -std=c++1z   CMakeFiles/scene.dir/main.cc.o CMakeFiles/scene.dir/scene.cc.o  -o scene  -L/home/nick/Programming/Opal/Opal-Engine -Wl,-rpath,/home/nick/Programming/Opal/Opal-Engine -lopal 
