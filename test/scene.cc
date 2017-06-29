@@ -18,8 +18,7 @@ TestScene::TestScene(Display& display, const std::string& name)
         auto dir = camera.getDirection();
         camera.moveCamera({dir.z * 0.1f, 0.0f, -dir.x * 0.1f});
     });
-}
 
-void TestScene::registerSystems() {
-    Scene::registerSystems();
+    m_display.setWireFrame(true);
+    m_entityManager.registerSystem<NormalRenderSystem>(m_resourceHandler.getShader(NormalRenderSystem::shaderName), m_display, m_worldLight);
 }

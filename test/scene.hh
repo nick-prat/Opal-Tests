@@ -4,6 +4,4 @@ class TestScene : public Scene {
 public:
     TestScene(Display& display, const std::string& scenename);
 
-private:
-    void registerSystems() override;
 };
