@@ -171,12 +171,6 @@ OpalTest_BINARY_DIR:STATIC=/home/nick/Programming/Opal/Opal-Tests/test
 //Value Computed by CMake
 OpalTest_SOURCE_DIR:STATIC=/home/nick/Programming/Opal/Opal-Tests/test
 
-//Value Computed by CMake
-tester_BINARY_DIR:STATIC=/home/nick/Programming/Opal/Opal-Tests/test
-
-//Value Computed by CMake
-tester_SOURCE_DIR:STATIC=/home/nick/Programming/Opal/Opal-Tests/test
-
 
 ########################
 # INTERNAL cache entries
