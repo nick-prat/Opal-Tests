@@ -1,7 +1,6 @@
 #include <Opal/Scene/scene.hh>
 
-class TestScene : public Scene {
+class TestScene : public Opal::Scene {
 public:
-    TestScene(Display& display, const std::string& scenename);
-
+    TestScene(Opal::Display& display, const std::string& scenename);
 };

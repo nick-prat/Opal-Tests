@@ -8,12 +8,14 @@
 
 #include "scene.hh"
 
+using namespace Opal;
+
 // TODO Ensure const correctness is follwed in whole project
 // TODO Implement some sort of collsion detection (bullet physics library?)
 
 int main(int argc, char* argv[]) {
     if(argc != 2) {
-        Log::getErrorLog() << "Arguments are invalid, use:\n\t" << argv[0] << " [scene_name]\n";
+        // Log::getErrorLog() << "Arguments are invalid, use:\n\t" << argv[0] << " [scene_name]\n";
         return -1;
     }
 
@@ -30,7 +32,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    glCore.getDisplay().setMouseCapture(false);
+    glCore.getDisplay().setCursorCapture(false);
     glCore.getDisplay().setClearColor(glm::vec4(0.0f));
     glCore.getDisplay().setVsync(true);
 
