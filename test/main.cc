@@ -1,10 +1,11 @@
 #include <iostream>
 #include <memory>
 
-#include <Core/display.hh>
-#include <Utilities/exceptions.hh>
-#include <Utilities/log.hh>
-#include <Core/glcore.hh>
+#include <Opal/Core/display.hh>
+#include <Opal/Util/exceptions.hh>
+#include <Opal/Util/log.hh>
+#include <Opal/Core/glcore.hh>
+
 #include "scene.hh"
 
 // TODO Ensure const correctness is follwed in whole project

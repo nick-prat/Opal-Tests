@@ -1,4 +1,4 @@
-#include <Scene/scene.hh>
+#include <Opal/Scene/scene.hh>
 
 class TestScene : public Scene {
 public:
