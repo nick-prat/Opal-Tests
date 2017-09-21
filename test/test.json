@@ -1,31 +1,33 @@
 {
+    "name": "test",
     "resources": [
         {
             "type": "model3d",
-            "resourcename": "m3d_bear",
+            "resourcename": "bear",
             "filename": "bear"
         },
         {
             "type": "model3d",
-            "resourcename": "m3d_deer",
+            "resourcename": "deer",
             "filename": "deer"
         },
         {
             "type": "model3d",
-            "resourcename": "m3d_wolf",
+            "resourcename": "wolf",
             "filename": "wolf"
         },
         {
             "type": "shader",
             "resourcename": "shader_staticmodel",
-            "filename": "staticmodel",
+            "filename": "model",
             "types": [
                 "fragment",
                 "vertex"
             ],
             "uniforms": [
                 "gSampler",
-                "gMVP"
+                "gMVP",
+                "gAmbientLight"
             ]
         },
         {
