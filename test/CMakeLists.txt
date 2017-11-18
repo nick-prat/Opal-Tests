@@ -8,6 +8,7 @@ set(CMAKE_RUNTIME_OUTPUT_DURECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin/release)
 set(SOURCE_FILES
     main.cc
     scene.cc
+    sunsystem.cc
 )
 
 find_package(Lua51 REQUIRED)

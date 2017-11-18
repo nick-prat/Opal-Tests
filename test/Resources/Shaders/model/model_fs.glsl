@@ -11,4 +11,6 @@ uniform vec4 gAmbientLight;
 void main() {
     vec3 ambientColor = gAmbientLight.xyz * gAmbientLight.w;
     FragColor = texture2D(gSampler, texCoord) * vec4(ambientColor + lightColor, 1.0);
+    // FragColor = vec4(texCoord, 1.0, 1.0);
+    // FragColor = vec4(lightColor, 0.0);
 }
