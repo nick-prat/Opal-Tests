@@ -38,7 +38,9 @@ TestScene::TestScene(Display& display, const std::string& name)
         display.exit();
     });
 
-    m_entityManager.registerSystem<SunSystem>(m_worldLight);
+    // m_display.setSize(400, 400);
+
+    // m_entityManager.registerSystem<SunSystem>(m_worldLight);
 
     auto id = m_entityManager.createEntity();
     m_entityManager.createComponent<CRender>(id, m_assetStore.getModel3D("deer"));
