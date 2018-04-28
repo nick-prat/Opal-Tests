@@ -3,15 +3,14 @@
 #include <Opal/Components/components.hh>
 #include <Opal/Util/util.hh>
 
-#include "sunsystem.hh"
+#include "systems.hh"
 
 using namespace Opal;
 
 TestScene::TestScene(Display& display, const std::string& name)
 : Scene(display, name) {
-    m_display.setCursorCapture(true);
     m_display.setCursorPosition({0.0, 0.0});
-    m_display.setWireFrame(false);
+    m_display.setWireFrame(true);
 
     m_display.bindCursorUpdate([&display = m_display](const float xpos, const float ypos) {
         display.getCamera().rotateCamera({ypos / 500.0f, xpos / 500.0f, 0.0f});
@@ -34,13 +33,21 @@ TestScene::TestScene(Display& display, const std::string& name)
         camera.moveCamera(glm::cross(camera.getUpDirection(), camera.getDirection()));
     });
 
+    m_display.bindWhileKeyPressed(InputKey::Q, [&camera = m_display.getCamera()] (const InputKey key) {
+        camera.moveCamera({0.0f, -1.0f, 0.0f});
+    });
+
+    m_display.bindWhileKeyPressed(InputKey::E, [&camera = m_display.getCamera()] (const InputKey key) {
+        camera.moveCamera({0.0f, 1.0f, 0.0f});
+    });
+
     m_display.bindOnKeyPressed(InputKey::ESC, [&display = m_display] (const InputKey key) {
         display.exit();
     });
 
     // m_display.setSize(400, 400);
 
-    // m_entityManager.registerSystem<SunSystem>(m_worldLight);
+    m_entityManager.registerSystem<XYZSystem>(m_assetStore.getShader("shader_line"), display);
 
     auto id = m_entityManager.createEntity();
     m_entityManager.createComponent<CRender>(id, m_assetStore.getModel3D("deer"));

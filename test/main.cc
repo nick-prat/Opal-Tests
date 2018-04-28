@@ -20,9 +20,10 @@ int main(int argc, char* argv[]) {
     constexpr int height = 576;
 
     GLCore glCore{width, height, title};
-    glCore.getDisplay().setCursorCapture(false);
-    glCore.getDisplay().setClearColor(glm::vec4(0.0f));
-    glCore.getDisplay().setVsync(true);
+    auto& display = glCore.getDisplay();
+    display.setCursorCapture(true);
+    display.setClearColor(glm::vec4(1.0f));
+    display.setVsync(true);
 
     glCore.loadScene<TestScene>(scenename);
     glCore.start();
