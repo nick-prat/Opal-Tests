@@ -14,15 +14,16 @@ using namespace Opal;
 // TODO Implement some sort of collsion detection (bullet physics library?)
 
 int main(int argc, char* argv[]) {
-    const std::string scenename = "test";
-    const std::string title = "OpenGL Project";
+    std::string const scenename = "test";
+    std::string const title = "OpenGL Project";
     constexpr int width = 1024;
     constexpr int height = 576;
 
     GLCore glCore{width, height, title};
+
     auto& display = glCore.getDisplay();
     display.setCursorCapture(true);
-    display.setClearColor(glm::vec4(1.0f));
+    display.setClearColor(glm::vec4(0.0f));
     display.setVsync(true);
 
     glCore.loadScene<TestScene>(scenename);

@@ -7,8 +7,8 @@ SunSystem::SunSystem(Opal::WorldLight& worldLight)
 : m_worldLight(worldLight) {}
 
 void SunSystem::update(Emerald::EntityManager& entMan) {
-    m_angle += 0.01;
-    m_worldLight.setSunLocation({glm::sin(m_angle), glm::cos(m_angle), 1.0f});
+    m_angle += 0.05;
+    m_worldLight.setSunDirection({glm::sin(m_angle), glm::cos(m_angle), 1.0f});
 }
 
 XYZSystem::XYZSystem(Opal::Shader const& shader, Opal::Display const& display)
@@ -41,7 +41,7 @@ XYZSystem::XYZSystem(Opal::Shader const& shader, Opal::Display const& display)
 
 void XYZSystem::update(Emerald::EntityManager& entMan) {
     m_shader.useProgram();
-    auto pv = m_display.getProjectionMatrix() * m_display.getCamera().getViewMatrix();
+    auto pv = m_display.getCamera().getProjectionMatrix() * m_display.getCamera().getViewMatrix();
     glUniformMatrix4fv(m_shader.getUniformLocation("gMVP"), 1, GL_FALSE, glm::value_ptr(pv));
     glBindVertexArray(m_vao);
     glDrawElements(GL_LINES, (GLsizei)m_indexCount, GL_UNSIGNED_INT, nullptr);

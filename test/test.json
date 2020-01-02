@@ -17,6 +17,15 @@
             "filename": "wolf"
         },
         {
+            "type": "terrain",
+            "resourcename": "terrain_patch1",
+            "filename": "terrain_patch1",
+            "sampleRate": 2,
+            "width": 250,
+            "length": 250,
+            "height": 10
+        },
+        {
             "type": "shader",
             "resourcename": "shader_staticmodel",
             "filename": "model",
@@ -50,6 +59,18 @@
             "types": [
                 "fragment",
                 "geometry",
+                "vertex"
+            ],
+            "uniforms": [
+                "gMVP"
+            ]
+        },
+        {
+            "type": "shader",
+            "resourcename": "shader_terrain",
+            "filename": "normal",
+            "types": [
+                "fragment",
                 "vertex"
             ],
             "uniforms": [

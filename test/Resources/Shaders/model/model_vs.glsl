@@ -15,7 +15,7 @@ out vec2 texCoord;
 out vec3 lightColor;
 
 void main() {
-    float lpow = dot(normalize(iPosition - gSunDirection.xyz), normalize(iNormal));
+    float lpow = dot(normalize(gSunDirection.xyz), normalize(iNormal));
     lightColor = clamp(gSunColor.xyz * lpow, 0.0, 1.0);
     gl_Position = gMVP * vec4(iPosition, 1.0);
     texCoord = iTexCoord;
